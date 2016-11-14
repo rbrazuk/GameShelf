@@ -1,5 +1,7 @@
 package com.example.ross.gameshelf.models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Game {
@@ -10,6 +12,18 @@ public class Game {
     private String mGenre;
     private List<String> mTags;
     private String mStatus;
+    private String mYear;
+
+    public Game(String mTitle, int mMinPlayers, int mMaxPlayers, String mDesigner, String mGenre, List<String> mTags, String mStatus, String mYear) {
+        this.mTitle = mTitle;
+        this.mMinPlayers = mMinPlayers;
+        this.mMaxPlayers = mMaxPlayers;
+        this.mDesigner = mDesigner;
+        this.mGenre = mGenre;
+        this.mTags = mTags;
+        this.mStatus = mStatus;
+        this.mYear = mYear;
+    }
 
     public String getmTitle() {
         return mTitle;
@@ -65,5 +79,26 @@ public class Game {
 
     public void setmStatus(String mStatus) {
         this.mStatus = mStatus;
+    }
+
+    public String getmYear() {
+        return mYear;
+    }
+
+    public void setmYear(String mYear) {
+        this.mYear = mYear;
+    }
+
+    public static ArrayList<Game> getDummyList() {
+        Game lanterns = new Game("Lanterns", 2, 4, null, null, null, null, "2015");
+        Game carcassonne = new Game("Carcassonne", 2, 4, null, null, null, null, "2000");
+        Game powerGrid = new Game("Power Grid", 2, 6, null, null, null, null, "2004");
+
+        ArrayList<Game> gameList = new ArrayList<>();
+        gameList.add(lanterns);
+        gameList.add(carcassonne);
+        gameList.add(powerGrid);
+
+        return gameList;
     }
 }
